@@ -8,9 +8,9 @@
         Title="Announcement" Height="177.311" Width="388.235">
     <Grid>
         <StackPanel>
-            <Label Content="One of your tasks are going to meet deadline!" FontWeight="Bold" Margin="20,20,90,0"/>
-            <Label Content="Please check your tasklist for further information." Margin="20,0,90,0"/>
-            <Button Name="OKButton" Content="OK" Margin="150,30,150,0" Click="OKButton_Click"/>
+            <Label Content="One of your tasks is going to meet deadline!" FontWeight="Bold" Margin="20,20,70,0"/>
+            <Label Content="Please check your tasklist for further information." Margin="20,0,70,0"/>
+            <Button Name="OkButton" Content="OK" Margin="150,30,150,0" Click="OKButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>
