@@ -45,8 +45,8 @@ namespace Task_Manager_CSharp_WPF
                 return;
             }
 
-            if (EndingDatePicker.SelectedDate != null)
-                newTask.EndingDate = EndingDatePicker.SelectedDate.Value;
+            if (EndingDatePicker.Value != null)
+                newTask.EndingDate = EndingDatePicker.Value.Value.ToString("dd-MM-yyyy HH:mm");
             else
             {
                 MessageBox.Show("Date is not selected!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -59,7 +59,6 @@ namespace Task_Manager_CSharp_WPF
             };
 
             newTask.StartDate = DateTime.Now;
-
             newTask.TaskName = TextBoxTaskName.Text;
             
             this.DialogResult = true;

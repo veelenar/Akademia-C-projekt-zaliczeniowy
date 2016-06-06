@@ -12,6 +12,7 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <StackPanel>
+            
             <DataGrid Margin="5,5,5,0" Grid.Row="0" MinHeight="268" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AutoGenerateColumns="False" IsReadOnly="True" DataContext="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ItemsSource="{Binding TasksList, Mode=OneWay}" SelectedItem="{Binding SelectedTask, Mode=TwoWay}">
                 <DataGrid.RowStyle>
                     <Style TargetType="DataGridRow">
@@ -24,12 +25,11 @@
                 </DataGrid.RowStyle>
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Task" Binding="{Binding TaskName, Mode=OneWay}"/>
-                    <DataGridTextColumn Header="Deadline" Binding="{Binding EndingDate, Mode=OneWay, StringFormat='{}{0:dd-MM-yyyy}'}"/>
+                    <DataGridTextColumn Header="Deadline" Binding="{Binding EndingDate, Mode=OneWay, StringFormat='{}{0:dd-MM-yyyy HH:mm}'}"/>
                     <DataGridTextColumn Header="Responsible person" Binding="{Binding ResponsiblePerson.Name, Mode=OneWay}" />
                     <DataGridTextColumn Header="Importance" Binding="{Binding Importance, Mode=OneWay}" />
                 </DataGrid.Columns>
             </DataGrid>
-           
         </StackPanel>
         
         <Button Name="AddTaskButton" 
@@ -41,7 +41,7 @@
                 Content="Delete task" 
                 Grid.Row="1"
                 Margin ="10" HorizontalAlignment="Right" Width="120" Click="DeteleTaskButton_Click"/>
-        
+
     </Grid>
 </Window>
 
