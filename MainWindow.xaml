@@ -12,27 +12,36 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <StackPanel>
-            
-            <ListView Name="TaskList" Margin="5,5,5,0" Grid.Row="0" Height="268" VerticalAlignment="Top">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Zadanie"/>
-                    <GridViewColumn Header="Data zakończenia"/>
-                    <GridViewColumn Header="Osoba odpowiedzialna"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+            <DataGrid Margin="5,5,5,0" Grid.Row="0" MinHeight="268" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AutoGenerateColumns="False" IsReadOnly="True" DataContext="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ItemsSource="{Binding TasksList, Mode=OneWay}" SelectedItem="{Binding SelectedTask, Mode=TwoWay}">
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <SolidColorBrush Color="{Binding Color}" />
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </DataGrid.RowStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Task" Binding="{Binding TaskName, Mode=OneWay}"/>
+                    <DataGridTextColumn Header="Deadline" Binding="{Binding EndingDate, Mode=OneWay, StringFormat='{}{0:dd-MM-yyyy}'}"/>
+                    <DataGridTextColumn Header="Responsible person" Binding="{Binding ResponsiblePerson.Name, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Importance" Binding="{Binding Importance, Mode=OneWay}" />
+                </DataGrid.Columns>
+            </DataGrid>
+           
         </StackPanel>
         
         <Button Name="AddTaskButton" 
-                Content="Add Task" 
+                Content="Add task" 
                 Grid.Row="1" 
-                Margin ="10,10,400,10" Click="AddTaskButton_Click"/>
+                Margin ="10" Width="120" HorizontalAlignment="Left" Click="AddTaskButton_Click"/>
 
         <Button Name="DeteleTaskButton" 
-                Content="Delete Task" 
+                Content="Delete task" 
                 Grid.Row="1"
-                Margin ="400,10,10,10" Click="DeteleTaskButton_Click"/>
-
+                Margin ="10" HorizontalAlignment="Right" Width="120" Click="DeteleTaskButton_Click"/>
+        
     </Grid>
 </Window>
+

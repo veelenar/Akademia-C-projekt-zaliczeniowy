@@ -6,15 +6,21 @@
         xmlns:local="clr-namespace:Task_Manager_CSharp_WPF"
         mc:Ignorable="d"
         Title="New Task Window" Height="300" Width="300" MaxHeight="300" MaxWidth="300">
+    <Window.Resources>
+        <local:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+    </Window.Resources>
     <Grid>
         <StackPanel Margin="0,0,0,0">
             <Label Content="New task" FontSize="15" FontWeight="Bold" />
             <Label Content="Task name"/>
             <TextBox Name="TextBoxTaskName" Margin="10,0,100,0"/>
             <Label Content="Ending date"/>
-            <TextBox Name="TextBoxEndingDate" Margin="10,0,100,0"/>
+            <DatePicker Name="EndingDatePicker" Margin="10,0,100,0"/>
             <Label Content ="Responsible person"/>
             <TextBox Name="TextBoxResponsiblePerson" Margin="10,0,100,0"/>
+            <Label Content="Importance"/>
+            <RadioButton Margin="10,0,100,0" x:Name="SimpleRadio" GroupName="importances">Simple</RadioButton>
+            <RadioButton Margin="10,0,100,0" x:Name="ImportantRadio" GroupName="importances">Important</RadioButton>
         </StackPanel>
         <Button x:Name="ButtonAddTask" 
             	Content="Add task"

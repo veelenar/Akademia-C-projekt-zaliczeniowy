@@ -1,14 +1,18 @@
-﻿namespace Task_Manager_CSharp_WPF
+﻿using System;
+using System.Windows.Media;
+
+namespace Task_Manager_CSharp_WPF
 {
-    public class Task
+    public abstract class Task
     {
         public string TaskName { get; set; }
-        public Date EndingDate { get; set; }
+        public DateTime EndingDate { get; set; }
+        public DateTime StartDate { get; set; }
         public Person ResponsiblePerson { get; set; }
-        
-        public virtual string GetEndingDate()
-        {
-            return "data";
-        }
+
+        public abstract Importance Importance { get; }
+
+        public abstract Color Color { get; }
+    
     }
 }
