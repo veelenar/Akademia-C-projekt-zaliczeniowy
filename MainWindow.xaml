@@ -41,7 +41,18 @@
                 Content="Delete task" 
                 Grid.Row="1"
                 Margin ="10" HorizontalAlignment="Right" Width="120" Click="DeteleTaskButton_Click"/>
-
+        <Button Name="SaveButton" 
+                Content="Delete task" 
+                Grid.Row="1"
+                Margin ="10" HorizontalAlignment="Right" Width="120" Click="DeteleTaskButton_Click"/>
+        <Button Name="LoadButton" 
+                Content="Load" 
+                Grid.Row="1"
+                Margin ="160,10,267,10" HorizontalAlignment="Stretch" Width="90" Click="LoadButton_Click"/>
+        <Button Name="SaveTaskButton" 
+                Content="Save" 
+                Grid.Row="1"
+                Margin ="276,10,151,10" HorizontalAlignment="Stretch" Width="90" Click="SaveButton_Click"/>
     </Grid>
 </Window>
 

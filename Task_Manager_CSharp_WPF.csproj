@@ -79,9 +79,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AnnouncementWindow.xaml.cs">
-      <DependentUpon>AnnouncementWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="EnumToBooleanConverter.cs" />
     <Compile Include="Importance.cs" />
     <Compile Include="ImportantTask.cs" />
@@ -91,10 +88,6 @@
     <Compile Include="Person.cs" />
     <Compile Include="SimpleTask.cs" />
     <Compile Include="Task.cs" />
-    <Page Include="AnnouncementWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
