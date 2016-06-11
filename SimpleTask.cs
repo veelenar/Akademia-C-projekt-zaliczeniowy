@@ -7,7 +7,7 @@ using System.Windows.Media;
 
 namespace Task_Manager_CSharp_WPF
 {
-    class SimpleTask : Task
+    public class SimpleTask : Task
     {
         public override Importance Importance {
             get { return Importance.Simple; }
