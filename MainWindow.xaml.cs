@@ -3,11 +3,8 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading;
 using System.Windows;
 using System.Xml.Serialization;
-using Timer = System.Threading.Timer;
 
 
 //********************************************************************************************
@@ -267,7 +264,35 @@ namespace Task_Manager_CSharp_WPF
 
         private void LoadButton_Click(object sender, RoutedEventArgs e)
         {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.DefaultExt = ".xml";
+            dlg.Filter = "XML documents (.xml)|*.xml";
 
+            string fileName = "";
+
+            Nullable<bool> result = dlg.ShowDialog();
+            if (result == true)
+            {
+                fileName = dlg.FileName;
+            }
+
+            if (File.Exists(fileName))
+            {
+                XmlFileToList(fileName);
+            }
+        }
+
+        private void XmlFileToList(string fileName)
+        {
+            using (var sr = new StreamReader(fileName))
+            {
+                var deserializer = new XmlSerializer(typeof(ObservableCollection<Task>));
+                ObservableCollection<Task> tempList = (ObservableCollection<Task>)deserializer.Deserialize(sr);
+                foreach (var item in tempList)
+                {
+                    TasksList.Add(item);
+                }
+            }
         }
     }
 }
