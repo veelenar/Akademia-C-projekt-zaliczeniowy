@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Task_Manager_CSharp_WPF"
         mc:Ignorable="d"
-        Title="Task Manager" Height="350" Width="525">
+        Title="Task Manager" Height="380" Width="580">
     <Grid Width="Auto">
         <Grid.RowDefinitions>
-            <RowDefinition Height="12*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
-        <StackPanel>
+        <StackPanel Height="282" VerticalAlignment="Top">
 
-            <DataGrid Margin="5,5,5,0" Grid.Row="0" MinHeight="268" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AutoGenerateColumns="False" IsReadOnly="True" DataContext="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ItemsSource="{Binding TasksList, Mode=OneWay}" SelectedItem="{Binding SelectedTask, Mode=TwoWay}">
+            <DataGrid Margin="5,5,5,0" Grid.Row="0" MinHeight="268" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AutoGenerateColumns="False" IsReadOnly="True" DataContext="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ItemsSource="{Binding TasksList, Mode=OneWay}" SelectedItem="{Binding SelectedTask, Mode=TwoWay}" Height="284">
                 <DataGrid.RowStyle>
                     <Style TargetType="DataGridRow">
                         <Setter Property="Background">
@@ -31,26 +31,21 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
-
-        <Button Name="AddTaskButton" 
+        <WrapPanel Margin="0,287,0,0" RenderTransformOrigin="0.495,0.695">
+            <Button Name="AddTaskButton" 
                 Content="Add task" 
-                Grid.Row="1" 
                 Margin ="10" Width="120" HorizontalAlignment="Left" Click="AddTaskButton_Click"/>
 
-        <Button Name="DeteleTaskButton" 
+            <Button Name="DeteleTaskButton" 
                 Content="Delete task" 
-                Grid.Row="1"
                 Margin ="10" HorizontalAlignment="Right" Width="120" Click="DeteleTaskButton_Click"/>
-        <Button Name="SaveButton" 
-                Content="Delete task" 
-                Grid.Row="1"
-                Margin ="10" HorizontalAlignment="Right" Width="120" Click="DeteleTaskButton_Click"/>
-        <Button Name="LoadButton" 
+            <Button Name="LoadButton" 
                 Content="Load"
-                Margin ="137,10,260,10" Width="120" Click="LoadButton_Click" Grid.Row="1"/>
-        <Button Name="SaveTaskButton" 
+                Margin ="10" Width="120" Click="LoadButton_Click" />
+            <Button Name="SaveTaskButton" 
                 Content="Save"
-                Margin ="262,10,135,10" Width="120"   Click="SaveButton_Click" Grid.Row="1"/>
+                Margin ="10" Width="120" Click="SaveButton_Click" />
+        </WrapPanel>
     </Grid>
 </Window>
 

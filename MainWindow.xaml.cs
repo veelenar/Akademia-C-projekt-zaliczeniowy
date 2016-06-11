@@ -44,34 +44,6 @@ namespace Task_Manager_CSharp_WPF
 
             TasksList = new ObservableCollection<Task>();
 
-            //TasksList.Add(new SimpleTask()
-            //{
-            //    ResponsiblePerson = new Person() { Name = "Kacper" },
-            //    EndingDate = DateTime.Now.AddHours(1).AddMinutes(1).ToString("dd-MM-yyyy HH:mm"),
-            //    TaskName = "Leniuchowanie"
-            //});
-
-            //TasksList.Add(new SimpleTask()
-            //{
-            //    ResponsiblePerson = new Person() { Name = "Magda" },
-            //    EndingDate = DateTime.Now.AddMinutes(2).ToString("dd-MM-yyyy HH:mm"),
-            //    TaskName = "Leniuchowanie mniej"
-            //});
-
-            //TasksList.Add(new ImportantTask()
-            //{
-            //    ResponsiblePerson = new Person() { Name = "Piotr" },
-            //    EndingDate = DateTime.Now.AddDays(1).AddMinutes(2).ToString("dd-MM-yyyy HH:mm"),
-            //    TaskName = "Leniuchowanie bardziej"
-            //});
-
-            //TasksList.Add(new ImportantTask()
-            //{
-            //    ResponsiblePerson = new Person() { Name = "Kasia" },
-            //    EndingDate = DateTime.Now.AddDays(1).ToString("dd-MM-yyyy HH:mm"),
-            //    TaskName = "Leniuchowanie jeszcze bardziej"
-            //});
-
             Shown = IsShown.no;
             foreach (var task in TasksList)
             {
@@ -201,7 +173,19 @@ namespace Task_Manager_CSharp_WPF
                         Shown = IsShown.yes;
                     }
                 }
+                else if (task.EndingDate == DateTime.Now.AddDays(2).ToString("dd-MM-yyyy HH:mm"))
+                {
+                    if (Shown == IsShown.no)
+                    {
+                        MessageBox.Show("One of your tasks is going to meet a deadline in 2 days!" +
+                                        "\nCheck tasklist for further information.",
+                                        "Announcement - deadline in 2 days",
+                                        MessageBoxButton.OK, MessageBoxImage.Information);
+                        Shown = IsShown.yes;
+                    }
+                }
             }
+
             Shown = IsShown.no;
         }
 
