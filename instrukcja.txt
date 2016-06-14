@@ -1,0 +1,25 @@
+Task Manager to aplikacja, która przypomina o zdarzeniach, które widniej¹ na liœcie w oknie g³ównym.
+
+Co minutê od uruchomienia programu jest sprawdzany stan listy,
+by sprawdziæ czy data koñca zbli¿a siê lub w³aœnie nasta³a.
+
+Sprawdzanie wed³ug kryteriów:
+-teraz;
+-za godzinê;
+-za 6 godzin;
+-za 12 godzin;
+-za 1 dzieñ(24 godziny);
+-za 2 dni.
+
+Aby wype³niæ listê nale¿y klikn¹æ przycisk "Add task" i wype³niæ formularz posiadaj¹cy pola:
+-Task name(nazwa zdarzenia);
+-Ending date(data i godzina zakoñczenia zdarzenia);
+-Responsible person(Osoba odpowiedzialna za zdarzenie);
+-Importance(stopieñ wa¿noœci zdarzenia: simple/important).
+
+Zdarzenia oznaczone jako Simple bêd¹ widnia³y na liœcie pod kolorem zielonym, Important - czerwonym.
+
+Przycisk "Delete task" po klikniêciu przycisku usuwa zaznaczon¹
+pozycjê z listy poza (wyskoczy okno dialogowe z przyciskami "Tak" i "Nie" w celu potwierdzenia zamiaru).
+
+Przyciski Load i Save maj¹ za zadanie zapisywanie zdarzeñ z listy do pliku (domyœlnie .xml) oraz wczytywanie z pliku do listy.
